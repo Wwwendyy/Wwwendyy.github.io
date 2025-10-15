@@ -23,55 +23,57 @@
     </nav>
   </header>
 
-  <main id="main" class="container home-layout" aria-label="Home">
-    <!-- LEFT: avatar + quick info -->
-    <aside class="left-rail" aria-label="Profile">
+  <main id="main" class="container home-grid" aria-label="Home">
+    <!-- LEFT: sticky profile card -->
+    <aside class="profile-card" aria-label="Profile">
       <img class="avatar" src="./assets/avatar.jpg" alt="Portrait of Wenjun Dong" />
       <h1 class="name">Wenjun Dong</h1>
       <p class="muted">AI/ML Engineer (MLE focus)</p>
+
       <div class="taglist" aria-label="Keywords">
         <span class="tag">MLE</span>
         <span class="tag">Recsys Diversity</span>
         <span class="tag">GenAI</span>
         <span class="tag">Video Analysis</span>
       </div>
-      <hr />
-      <p><strong>Open to Summer 2026 Internships</strong><br />Machine Learning Engineer / Software Engineer / Data Scientist</p>
+
+      <div class="divider"></div>
+
+      <p class="status"><strong>Open to Summer 2026 Internships</strong><br>Machine Learning Engineer Software Engineer / Data Scientist</p>
+
       <div class="contact">
-        <p>Email: <button class="btn" id="copyMail" data-mail="wenjundong2026@u.northwestern.edu">Copy</button></p>
+        <p>Email: <button class="btn" id="copyMail" data-mail="wenjun@example.com">Copy</button></p>
         <p>GitHub: <a href="https://github.com/wwwendyy" target="_blank" rel="noopener">@wwwendyy</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/wenjun-dong/" aria-disabled="true">linkedin.com/in/wenjun-dong/</a></p>
+        <p>LinkedIn: <a href="#" aria-disabled="true">coming soon</a></p>
       </div>
     </aside>
 
-    <!-- RIGHT: scrollable content -->
-    <section class="panel" aria-label="Details">
+    <!-- RIGHT: normal page content (scrolls with the page) -->
+    <section class="content-col" aria-label="Details">
       <!-- About -->
       <section aria-labelledby="about-title" class="section">
         <h2 id="about-title" class="h2">About</h2>
         <p class="muted">
-          I build <strong>reliable, reproducible, and user-friendly</strong> AI systems. My recent work spans
-          recommender-system diversity, video-to-script pipelines, and LoRA-based generative workflows.
+          I build <strong>reliable, reproducible, and user-friendly</strong> AI systems.
+          Recent work spans recommender-system diversity, video-to-script pipelines, and LoRA-based generative workflows.
         </p>
       </section>
 
       <!-- Education -->
       <section aria-labelledby="edu-title" class="section">
         <h2 id="edu-title" class="h2">Education</h2>
-        <div class="list">
-          <article class="item">
-            <h3>Northwestern University — M.S. in Artificial Intelligence (MSAI)</h3>
-            <p class="meta">2025 — 2026 (Expected Dec 2026)</p>
-            <ul>
-              <li>Focus: Machine Learning Engineering, Recsys, Generative AI</li>
-              <li>Highlights: LLM value modeling, video script generation, diversity-aware ranking</li>
-            </ul>
-          </article>
-          <article class="item">
-            <h3>New York University — B.S. in Data Science (AI Track), Minors in CS & Math</h3>
-            <p class="meta">2021 — 2025</p>
-          </article>
-        </div>
+        <article class="item">
+          <h3>Northwestern University — M.S. in Artificial Intelligence (MSAI)</h3>
+          <p class="meta">2025 — 2026 (Expected Dec 2026)</p>
+          <ul>
+            <li>Focus: Machine Learning Engineering, Recsys, Generative AI</li>
+            <li>Highlights: LLM value modeling, video script generation, diversity-aware ranking</li>
+          </ul>
+        </article>
+        <article class="item">
+          <h3>New York University — B.S. in Data Science (AI Track), Minors in CS & Math</h3>
+          <p class="meta">2021 — 2025</p>
+        </article>
       </section>
 
       <!-- Honors -->
@@ -79,12 +81,12 @@
         <h2 id="honors-title" class="h2">Honors</h2>
         <div class="grid">
           <article class="card">
-            <h3>Dean’s List — NYU Shanghai</h3>
+            <h3>Dean’s List</h3>
             <p class="meta">2023–2025</p>
           </article>
           <article class="card">
-            <h3>Scholarship / Award</h3>
-            <p class="meta">2023</p>
+            <h3>Scholarship / Award (example)</h3>
+            <p class="meta">2022</p>
           </article>
         </div>
       </section>
@@ -92,23 +94,21 @@
       <!-- Job Experiences -->
       <section aria-labelledby="exp-title" class="section">
         <h2 id="exp-title" class="h2">Job Experiences</h2>
-        <div class="list">
-          <article class="item">
-            <h3>Machine Learning Intern — X-Sigma Partners</h3>
-            <p class="meta">2023 — 2024</p>
-            <ul>
-              <li>Improved internal processing efficiency ~70% via a streamlined automation system for financial & performance data (Excel + SQL).</li>
-              <li>Standardized feature generation and reporting pipelines with quality checks and logging.</li>
-            </ul>
-          </article>
-          <article class="item">
-            <h3>Quantitative Strategies Intern — CICC</h3>
-            <p class="meta">2023</p>
-            <ul>
-              <li>Built tabular ML baselines and feature pipelines on market OHLCV datasets.</li>
-            </ul>
-          </article>
-        </div>
+        <article class="item">
+          <h3>Machine Learning Intern — X-Sigma Partners</h3>
+          <p class="meta">May, 2025 — Aug, 2025</p>
+          <ul>
+            <li>Streamlined an automation system for financial & performance data (Excel + SQL), improving internal efficiency by ~70%.</li>
+            <li>Standardized feature generation and reporting pipelines with quality checks and logging.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <h3>Quantitative Strategies Intern — CICC</h3>
+          <p class="meta">2024</p>
+          <ul>
+            <li>Built tabular ML baselines and feature pipelines on market OHLCV datasets.</li>
+          </ul>
+        </article>
       </section>
     </section>
   </main>
