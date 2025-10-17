@@ -155,6 +155,24 @@ a:hover{ text-decoration:underline }
 .edu-card h3{ margin:0 0 6px; font-size:18px }
 .meta{ color:var(--muted); font-size:14px }
 
+.edu-headline{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.edu-logo{
+  width:40px; height:40px;
+  object-fit:contain;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:#fff; /* 透明背景的 svg/png 在深色模式下更清晰 */
+}
+@media (prefers-color-scheme: dark){
+  .edu-logo{ background: #111; }
+}
+
+
 /* Experience 列表项（轻卡片风格） */
 .item{
   border:1px solid var(--border);
