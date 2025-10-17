@@ -202,3 +202,15 @@ a:hover{ text-decoration:underline }
   .content-col{ grid-column:auto }
   .grid{ grid-template-columns: 1fr }
 }
+
+
+/* Vertical stack for Projects page */
+.stack{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;           /* 卡片之间的间距 */
+}
+
+/* 更紧凑的项目卡片标题与元信息排版（可选） */
+.card .meta{ margin-top: 2px }
+

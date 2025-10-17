@@ -10,55 +10,99 @@
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <header class="site-header">
+  <!-- NAV -->
+  <header class="site-header" role="banner">
     <nav class="container nav" aria-label="Primary">
       <a class="brand" href="/">Wenjun</a>
-      <div class="links">
-        <a href="/">Home</a>
-        <a href="./projects.html" aria-current="page">Projects</a>
-        <a href="./resume.html">Resume</a>
+      <div class="links" role="menubar">
+        <a href="./index.html" role="menuitem">Home</a>
+        <a href="./projects.html" aria-current="page" role="menuitem">Projects</a>
+        <a href="./resume.html" role="menuitem">Resume</a>
       </div>
     </nav>
   </header>
 
-  <main id="main" class="container">
+  <!-- MAIN -->
+  <main id="main" class="container" aria-label="Projects">
     <header class="page-header">
       <h1 class="h1">Projects</h1>
-      <p class="muted">Concise, impact-oriented, and reproducible.</p>
+      <p class="muted">Concise, impact-oriented, and reproducible. Below are selected works and research.</p>
     </header>
 
-    <section class="grid">
-      <article class="card">
-        <h3>Recsys Diversity Mini</h3>
-        <p class="meta">2025</p>
-        <p>Interactive demo showing the diversity–relevance trade-off using simple re-ranking and metrics (Coverage/Novelty/ILS).</p>
-        <p><a class="btn" href="#" aria-disabled="true">Demo (coming soon)</a></p>
-      </article>
+    <!-- Vertical list of project cards -->
+    <section class="stack">
 
+      <!-- 1) Comment-Insights-App -->
       <article class="card">
-        <h3>Video Script Lab</h3>
-        <p class="meta">2025</p>
-        <p>Whisper + SceneDetect + image captions → structured scripts (dialogue / visuals / SFX) for analysis and re-creation.</p>
-        <p><a class="btn" href="#" aria-disabled="true">Repo / Demo (coming soon)</a></p>
-      </article>
-
-      <article class="card">
-        <h3>LLM Value Modeling</h3>
+        <h3>Comment Insights App</h3>
         <p class="meta">2024–2025</p>
-        <p>Task-based evaluation on World Values Survey with LoRA-assisted alignment; emphasis on robustness and extrapolation.</p>
-        <p><a class="btn" href="#" aria-disabled="true">Paper / Code (coming soon)</a></p>
+        <p>
+          LLM-powered comment analytics app for clustering, sentiment, and topic insights. Uses Sentence
+          Transformers for embeddings and lightweight re-ranking to surface representative comments.
+        </p>
+        <ul>
+          <li>Interactive filters for clusters and sentiments; quick drill-down to examples.</li>
+          <li>Reproducible pipeline: ingestion → embedding → K-Means/topic labeling → visualization.</li>
+        </ul>
+        <p>
+          <a class="btn" href="https://github.com/Wwwendyy/Comment-Insights-App" target="_blank" rel="noopener">
+            View on GitHub
+          </a>
+        </p>
       </article>
+
+      <!-- 2) Online Airline Reservation System -->
+      <article class="card">
+        <h3>Online Airline Reservation System</h3>
+        <p class="meta">2024</p>
+        <p>
+          End-to-end airline reservation prototype focusing on data modeling and transactional integrity.
+          Implements flight search, booking, payments, and role-based access on a relational schema.
+        </p>
+        <ul>
+          <li>ER design, indexes, constraints, and transaction-safe operations.</li>
+          <li>Separation of concerns: data layer, business logic, and minimal UI.</li>
+        </ul>
+        <p>
+          <a class="btn" href="https://github.com/Wwwendyy/Online-Airline-Reservation-System" target="_blank" rel="noopener">
+            View on GitHub
+          </a>
+        </p>
+      </article>
+
+      <!-- 3) Research Assistant — Cognitive Model in LLM -->
+      <article class="card">
+        <h3>Research Assistant — Cognitive Model in LLM</h3>
+        <p class="meta">New York University · Shanghai, China · Jun 2024 – Dec 2024</p>
+        <p class="muted">Advisor: Prof. Hongyi Wen (Assistant Professor)</p>
+        <ul>
+          <li>
+            Engineered a World Values Survey pipeline using embeddings + K-Means, boosting cultural-cognitive
+            segmentation (<em>silhouette score ↑ ~200%</em> with Sentence Transformers vs. baseline).
+          </li>
+          <li>
+            Applied Prompt Optimization (ProTeGi) with gradient-based updates and chain-of-thought feedback,
+            reducing value-judgment prediction error (<em>MSE ↓ ~6%</em>) and improving contextual alignment.
+          </li>
+          <li>
+            Fine-tuned LLaMA-3 with LoRA for cognitive decision tasks, achieving &gt;90% parameter reduction
+            versus full fine-tuning while validating performance across clusters.
+          </li>
+        </ul>
+      </article>
+
     </section>
 
-    <section class="back-cta">
-      <a class="btn" href="/">⟵ Back to Home</a>
-    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">© <span id="year"></span> Wenjun · Projects</div>
   </footer>
 
-  <script src="./assets/main.js"></script>
+  <script>
+    // Footer year
+    document.getElementById('year')?.append(new Date().getFullYear());
+  </script>
 </body>
 </html>
