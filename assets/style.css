@@ -214,3 +214,22 @@ a:hover{ text-decoration:underline }
 /* 更紧凑的项目卡片标题与元信息排版（可选） */
 .card .meta{ margin-top: 2px }
 
+/* Linked project titles */
+.card h3 a{
+  color: var(--fg);              /* 默认与正文同色（黑色系） */
+  text-decoration: none;         /* 初始无下划线 */
+  transition: color .15s ease;
+}
+
+.card h3 a:hover,
+.card h3 a:focus-visible{
+  color: var(--brand);           /* #591D59 */
+  text-decoration: underline;    /* 悬停/聚焦时出现下划线 */
+}
+
+/* 可访问性：键盘聚焦时给出可见轮廓 */
+.card h3 a:focus-visible{
+  outline: 2px solid color-mix(in oklab, var(--brand), transparent 60%);
+  outline-offset: 2px;
+}
+
