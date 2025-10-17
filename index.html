@@ -23,6 +23,7 @@
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main id="main" class="container home-grid" aria-label="Home">
     <!-- LEFT: sticky profile card -->
     <aside class="profile-card" aria-label="Profile">
@@ -32,48 +33,58 @@
 
       <div class="taglist" aria-label="Keywords">
         <span class="tag">MLE</span>
-        <span class="tag">Recsys Diversity</span>
-        <span class="tag">GenAI</span>
-        <span class="tag">Video Analysis</span>
+        <span class="tag">Recommender Systems</span>
+        <span class="tag">Generative AI</span>
+        <span class="tag">Computer Vision</span>
       </div>
 
       <div class="divider"></div>
 
-      <p class="status"><strong>Open to Summer 2026 Internships</strong><br>Machine Learning Engineer Software Engineer / Data Scientist</p>
+      <p class="status">
+        <strong>Open to Summer 2026 Internships</strong><br />
+        Machine Learning Engineer · Software Engineer · Data Scientist
+      </p>
 
       <div class="contact">
-        <p>Email: <button class="btn" id="copyMail" data-mail="wenjun@example.com">Copy</button></p>
+        <p>Email: wenjundong2026@u.northwestern.edu</p>
         <p>GitHub: <a href="https://github.com/wwwendyy" target="_blank" rel="noopener">@wwwendyy</a></p>
-        <p>LinkedIn: <a href="#" aria-disabled="true">coming soon</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/wenjun-dong" target="_blank" rel="noopener">linkedin.com/in/wenjun-dong</a></p>
       </div>
     </aside>
 
-    <!-- RIGHT: normal page content (scrolls with the page) -->
+    <!-- RIGHT: scrollable content -->
     <section class="content-col" aria-label="Details">
       <!-- About -->
       <section aria-labelledby="about-title" class="section">
         <h2 id="about-title" class="h2">About</h2>
         <p class="muted">
           I build <strong>reliable, reproducible, and user-friendly</strong> AI systems.
-          Recent work spans recommender-system diversity, video-to-script pipelines, and LoRA-based generative workflows.
+          My recent work spans diversity-aware recommender systems, video-to-script pipelines, and LoRA-based LLM workflows.
+          Comfortable shipping with Python, PyTorch, SQL, Flask/FastAPI, Docker, and cloud services.
         </p>
       </section>
 
-      <!-- Education -->
+      <!-- Education (each item is a card) -->
       <section aria-labelledby="edu-title" class="section">
         <h2 id="edu-title" class="h2">Education</h2>
-        <article class="item">
-          <h3>Northwestern University — M.S. in Artificial Intelligence (MSAI)</h3>
-          <p class="meta">2025 — 2026 (Expected Dec 2026)</p>
-          <ul>
-            <li>Focus: Machine Learning Engineering, Recsys, Generative AI</li>
-            <li>Highlights: LLM value modeling, video script generation, diversity-aware ranking</li>
-          </ul>
-        </article>
-        <article class="item">
-          <h3>New York University — B.S. in Data Science (AI Track), Minors in CS & Math</h3>
-          <p class="meta">2021 — 2025</p>
-        </article>
+        <div class="edu-grid">
+          <article class="edu-card">
+            <h3>Northwestern University — M.S. in Artificial Intelligence (MSAI)</h3>
+            <p class="meta">Evanston, IL · Expected Dec 2026</p>
+            <ul>
+              <li>Focus: Machine Learning Engineering, Recommender Systems, Generative AI</li>
+              <li>Representative work: LLM value modeling, video script generation, diversity-aware ranking</li>
+            </ul>
+          </article>
+
+          <article class="edu-card">
+            <h3>New York University — B.S. in Data Science (AI Track), Minors in CS & Mathematics</h3>
+            <p class="meta">New York, NY & Shanghai, China · May 2025 · Major GPA: 3.85</p>
+            <ul>
+              <li>Study Away: NYU Abu Dhabi (Fall 2023), NYU New York (Spring 2024)</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
       <!-- Honors -->
@@ -81,12 +92,8 @@
         <h2 id="honors-title" class="h2">Honors</h2>
         <div class="grid">
           <article class="card">
-            <h3>Dean’s List</h3>
-            <p class="meta">2023–2025</p>
-          </article>
-          <article class="card">
-            <h3>Scholarship / Award (example)</h3>
-            <p class="meta">2022</p>
+            <h3>Dean’s List — New York University</h3>
+            <p class="meta">Years 2023-2025</p>
           </article>
         </div>
       </section>
@@ -94,29 +101,61 @@
       <!-- Job Experiences -->
       <section aria-labelledby="exp-title" class="section">
         <h2 id="exp-title" class="h2">Job Experiences</h2>
+
         <article class="item">
           <h3>Machine Learning Intern — X-Sigma Partners</h3>
-          <p class="meta">May, 2025 — Aug, 2025</p>
+          <p class="meta">Shanghai, China · May 2025 — Aug 2025</p>
           <ul>
-            <li>Streamlined an automation system for financial & performance data (Excel + SQL), improving internal efficiency by ~70%.</li>
-            <li>Standardized feature generation and reporting pipelines with quality checks and logging.</li>
+            <li>Built Python/SQL automation to streamline large-scale data collection and processing, improving efficiency by 30%+ and supporting downstream analytics.</li>
+            <li>Designed content analysis pipelines combining web-scraping with NLP to extract trends from multimodal social media data for marketing insights.</li>
+            <li>Developed video-understanding modules (Whisper ASR, scene segmentation, script analysis) for structured video representation and trend discovery.</li>
+            <li>Explored multi-modal AI apps integrating text, audio, and video; supported Alibaba Cloud deployment for scalable experiments.</li>
           </ul>
         </article>
+
         <article class="item">
-          <h3>Quantitative Strategies Intern — CICC</h3>
-          <p class="meta">2024</p>
+          <h3>Research Assistant — New York University</h3>
+          <p class="meta">New York, NY · May 2025 — Sep 2025</p>
           <ul>
-            <li>Built tabular ML baselines and feature pipelines on market OHLCV datasets.</li>
+            <li>Developed and fine-tuned tumor detection models using YOLOv5 and YOLOv10 architectures, achieving a high mean Average Precision (mAP) of 97.3% in endoscopic videos for tumor detection and bounding box generation. </li>
+            <li>Conducted comparative analysis of YOLOv5 and YOLOv10 models to evaluate their accuracy, precision, and recall, contributing to optimizing model selection for real-time medical applications.</li>
+            <li>Retrieved SFM model using real world video.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <h3>Quantitative Strategies Intern — China International Capital Corporation (CICC)</h3>
+          <p class="meta">Shanghai, China · Mar 2024 — Jun 2024</p>
+          <ul>
+            <li>Developed and tuned XGBoost models with time-series validation, achieving consistent ≥50% directional accuracy and improved generalization across multiple periods.</li>
+            <li>Benchmarked traditional ML vs. deep tabular models (TabNet, NODE, DNF), with XGBoost showing superior robustness (correlation ≈0.86) across pipelines</li>
           </ul>
         </article>
       </section>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">© <span id="year"></span> Wenjun · Fast, accessible, mobile-friendly</div>
   </footer>
 
-  <script src="./assets/main.js"></script>
+  <!-- Small inline JS for year + copy email -->
+  <script>
+    // Footer year
+    document.getElementById('year')?.append(new Date().getFullYear());
+    // Copy email
+    const copyBtn = document.getElementById('copyMail');
+    copyBtn?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(copyBtn.dataset.mail);
+        const old = copyBtn.textContent;
+        copyBtn.textContent = 'Copied ✅';
+        setTimeout(() => (copyBtn.textContent = old), 1500);
+      } catch {
+        alert('Copy failed. Please use: ' + copyBtn.dataset.mail);
+      }
+    });
+  </script>
 </body>
 </html>

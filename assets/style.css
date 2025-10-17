@@ -1,6 +1,15 @@
 :root{
   --bg:#ffffff; --fg:#0b1220; --muted:#5b6472; --brand:#591D59;
   --card:#f7f8fa; --border:#e6e8ec;
+
+  /* 普通页面容器最大宽度（导航/页脚等） */
+  --page-max: 1200px;
+
+  /* Home 两栏尺寸（中央内容的最大宽度）*/
+  --content-max: 1200px;     /* 你想更宽就调到 1280px 或 1360px */
+  --left-card-w: 320px;      /* 左侧资料卡宽度：280~360 都可 */
+  --cols-gap: 28px;          /* 左卡与右内容间距 */
+  --right-min: 720px;        /* 右侧最小宽度：680/700/760 可按喜好调 */
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -8,66 +17,108 @@
     --card:#0f172a; --border:#1f2937;
   }
 }
+
 html,body{height:100%}
 body{
   margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial;
   color:var(--fg); background:var(--bg); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-a{ color:var(--brand); text-decoration:none } a:hover{text-decoration:underline}
-.sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.container{width:min(100%,1100px);margin:0 auto;padding:0 20px}
-.h1{font-size:clamp(28px,4vw,40px);line-height:1.2;margin:0 0 8px}
-.h2{font-size:clamp(22px,3.2vw,28px);line-height:1.25;margin:24px 0 12px}
-.muted{color:var(--muted)}
-.mt{margin-top:14px}
 
-.site-header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border);
-  backdrop-filter:saturate(180%) blur(8px); background:color-mix(in oklab,var(--bg) 88%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{font-weight:700;letter-spacing:.2px;color:var(--fg)}
-.links a{margin-left:16px}
+a{ color:var(--brand); text-decoration:none }
+a:hover{ text-decoration:underline }
 
-.site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);text-align:center;margin-top:40px}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .95rem;border-radius:.75rem;border:1px solid var(--border);background:var(--card);color:var(--fg)}
-.btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+.sr-only{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
 
-.taglist{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
-.tag{font-size:13px;border:1px solid var(--border);padding:.25rem .5rem;border-radius:.5rem;background:var(--card)}
-
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{border:1px solid var(--border);border-radius:14px;padding:16px;background:var(--card)}
-.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0 0 6px}
-
-.page-header{margin:20px 0 8px}
-.back-cta{margin-top:20px}
-
-.avatar{width:120px;height:120px;border-radius:16px;object-fit:cover;border:1px solid var(--border)}
-.left-rail{position:sticky;top:84px;align-self:start}
-.name{margin:.4rem 0 0}
-.contact p{margin:.35rem 0}
-
-.section + .section{margin-top:18px}
-.list .item{border:1px solid var(--border);border-radius:12px;padding:12px;background:transparent}
-.list .item + .item{margin-top:12px}
-.meta{color:var(--muted);font-size:14px}
-
-.resume-frame{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--card)}
-.resume-iframe{width:100%;height:min(82vh,1000px);border:0}
-
-/* —— 新布局：左侧固定卡片 + 右侧普通滚动 —— */
-
-/* 两列网格：左 300px 卡片，右自适应内容 */
-.home-grid{
-  display:grid;
-  grid-template-columns: 320px 1fr;
-  gap:28px;
-  margin:16px 0 0;
+/* ------- 通用容器（导航/页脚等） ------- */
+.container{
+  width:min(100%, var(--page-max));
+  margin:0 auto;
+  padding:0 24px;
 }
 
-/* 左侧资料卡 */
+/* ------- 标题与文本 ------- */
+.h1{ font-size:clamp(28px,4vw,40px); line-height:1.2; margin:0 0 8px }
+.h2{ font-size:clamp(22px,3.2vw,28px); line-height:1.25; margin:20px 0 10px }
+.muted{ color:var(--muted) }
+.mt{ margin-top:14px }
+
+/* ------- 顶部导航（带毛玻璃） ------- */
+.site-header{
+  position:sticky; top:0; z-index:10; border-bottom:1px solid var(--border);
+  backdrop-filter:saturate(180%) blur(8px);
+  background: rgba(255,255,255,0.88);
+}
+@media (prefers-color-scheme: dark){
+  .site-header{ background: rgba(0,0,0,0.30); }
+}
+@supports (background: color-mix(in oklab, white, black)){
+  .site-header{ background: color-mix(in oklab, var(--bg) 88%, transparent); }
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; height:64px }
+.brand{ font-weight:700; letter-spacing:.2px; color:var(--fg) }
+.links a{ margin-left:16px }
+
+/* ------- 页脚 ------- */
+.site-footer{ border-top:1px solid var(--border); padding:28px 0; color:var(--muted); text-align:center; margin-top:40px }
+
+/* ------- 按钮 / 标签 / 卡片 ------- */
+.btn{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.6rem .95rem; border-radius:.75rem;
+  border:1px solid var(--border); background:var(--card); color:var(--fg);
+}
+.btn.primary{ background:var(--brand); color:#fff; border-color:var(--brand) }
+
+.taglist{ display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0 }
+.tag{ font-size:13px; border:1px solid var(--border); padding:.25rem .5rem; border-radius:.5rem; background:var(--card) }
+
+.card{
+  border:1px solid var(--border); border-radius:14px; padding:14px; background:var(--card);
+}
+.card h3{ margin:0 0 6px; font-size:18px }
+.card p{ margin:0 0 6px }
+
+/* 通用 3 列网格（如 Honors） */
+.grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+
+/* ======================================================================
+   Home 主网格 —— 宽画幅且在可视区绝对居中
+   1) 使用 100vw + transform 技巧把主网格整体居中；
+   2) 用 1fr 对称 gutter 居中中央内容；
+   3) 通过 --content-max 限制中央内容最大宽度（更像参考站的“宽而不散”）。
+   ====================================================================== */
+
+/* 覆盖 .container 的限宽，使 Home 主网格跨满可视区并绝对居中 */
+.container.home-grid{
+  width: 100vw;
+  max-width: none;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 网格：gutter(1fr) | 左卡 | gap | 右内容 | gutter(1fr) */
+.home-grid{
+  display: grid;
+  grid-template-columns:
+    1fr
+    var(--left-card-w)
+    var(--cols-gap)
+    minmax(var(--right-min), calc(var(--content-max) - var(--left-card-w) - var(--cols-gap)))
+    1fr;
+  column-gap: 0;
+  margin-top: 16px;
+}
+
+/* 放置区域 */
+.profile-card{ grid-column: 2; }
+.content-col{ grid-column: 4; }
+
+/* 左侧资料卡（sticky） */
 .profile-card{
-  position: sticky;
-  top: 84px;                 /* 与导航高度匹配，必要时微调 */
+  position: sticky; top: 84px;           /* 视需要微调以匹配导航高度 */
   align-self: start;
   border:1px solid var(--border);
   border-radius:16px;
@@ -75,9 +126,9 @@ a{ color:var(--brand); text-decoration:none } a:hover{text-decoration:underline}
   padding:18px;
 }
 .profile-card .avatar{
-  width:120px;height:120px;object-fit:cover;
-  border-radius:16px;border:1px solid var(--border);
-  display:block;margin:0 auto 12px;
+  width:120px; height:120px; object-fit:cover;
+  border-radius:16px; border:1px solid var(--border);
+  display:block; margin:0 auto 12px;
 }
 .profile-card .name{ text-align:center; margin:.25rem 0 .2rem }
 .profile-card .muted{ text-align:center }
@@ -86,11 +137,25 @@ a{ color:var(--brand); text-decoration:none } a:hover{text-decoration:underline}
 .profile-card .status{ margin:10px 0 }
 .profile-card .contact p{ margin:.35rem 0 }
 
-/* 右侧内容列（普通页面滚动，无内层滚动容器） */
-.content-col{ min-height: 60vh; }
-.section + .section{ margin-top: 24px }
+/* 右侧内容区 */
+.section + .section{ margin-top:24px }
 
-/* 列表项和网格保持你原有的风格 */
+/* Education：每一项均为卡片 */
+.edu-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:14px;
+}
+.edu-card{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  background:var(--card);
+}
+.edu-card h3{ margin:0 0 6px; font-size:18px }
+.meta{ color:var(--muted); font-size:14px }
+
+/* Experience 列表项（轻卡片风格） */
 .item{
   border:1px solid var(--border);
   border-radius:12px;
@@ -98,11 +163,24 @@ a{ color:var(--brand); text-decoration:none } a:hover{text-decoration:underline}
   background:transparent;
   margin-bottom:12px;
 }
-.meta{ color:var(--muted); font-size:14px }
 
-/* 响应式：小屏改为单列，卡片不再 sticky */
-@media (max-width: 900px){
-  .home-grid{ grid-template-columns: 1fr }
-  .profile-card{ position: static }
+/* Resume 页的 iframe（如复用） */
+.resume-frame{ border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--card) }
+.resume-iframe{ width:100%; height:min(82vh,1000px); border:0 }
+
+/* ------- 响应式 ------- */
+@media (max-width: 1200px){
+  .grid{ grid-template-columns: 1fr 1fr }
 }
-
+@media (max-width: 900px){
+  /* 小屏：回落为单列 */
+  .container.home-grid{
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+  .home-grid{ grid-template-columns: 1fr }
+  .profile-card{ position: static; grid-column:auto }
+  .content-col{ grid-column:auto }
+  .grid{ grid-template-columns: 1fr }
+}
